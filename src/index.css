@@ -107,30 +107,37 @@ button:focus-visible {
   @font-face {
     font-family: 'CourierPrime';
     src: url('../src/assets/fonts/CourierPrime-Regular.woff2') format('woff2');
+    font-display: swap;
   }
   @font-face {
     font-family: 'Prompt';
     src: url('../src/assets/fonts/Prompt-Medium.woff2') format('woff2');
+    font-display: swap;
   }
      @font-face {
     font-family: 'MontserratNormal';
     src: url('../src/assets/fonts/Montserrat-Light.woff2') format('woff2');
+    font-display: swap;
   }
      @font-face {
     font-family: 'MontserratRegular';
     src: url('../src/assets/fonts/Montserrat-Regular.woff2') format('woff2');
+    font-display: swap;
   }
   @font-face {
     font-family: 'MontserratMedium';
     src: url('../src/assets/fonts/Montserrat-Medium.woff2') format('woff2');
+    font-display: swap;
   }
   @font-face {
     font-family: 'Merriweather';
     src: url('../src/assets/fonts/Merriweather_24pt-Regular.woff2') format('woff2');
+    font-display: swap;
   }
   @font-face {
     font-family: 'Sora';
     src: url('../src/assets/fonts/Sora-Medium.woff2') format('woff2');
+    font-display: swap;
   }
   :root {
     --radius: 0.65rem;
