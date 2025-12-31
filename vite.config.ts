@@ -23,9 +23,9 @@ export default defineConfig({
           // Separar vendor chunks
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'supabase-vendor': ['@supabase/supabase-js'],
-          'ui-vendor': ['@chakra-ui/react', '@radix-ui/react-dialog', '@radix-ui/react-separator', '@radix-ui/react-slot'],
-          'form-vendor': ['react-hook-form', '@hookform/resolvers', '@hookform/error-message', 'zod'],
-          'icons-vendor': ['lucide-react', 'react-icons'],
+          'ui-vendor': ['@chakra-ui/react', '@radix-ui/react-separator', '@radix-ui/react-slot'],
+          'form-vendor': ['react-hook-form', '@hookform/resolvers', 'zod'],
+          'icons-vendor': ['lucide-react'],
         },
       },
     },

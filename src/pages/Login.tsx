@@ -133,10 +133,10 @@ const Login = () => {
                     </Button>
                   )}{" "}
                 </div>
-                {(errors as any).password?.message && (
+                {errors.password?.message && (
                   <span className="text-red-500 text-xs flex gap-2 items-center">
                     <AlertCircle className="w-4" />
-                    {(errors as any).password.message}
+                    {errors.password.message}
                   </span>
                 )}
                 <Link

@@ -69,7 +69,7 @@ const ChangePass = ({ setIsPasswordRecovery }: ChangePassProps) => {
       setIsPasswordRecovery(false);
       navigate('/test')
     } catch (error) {
-      console.log("Ocorreu um erro interno");
+      console.log("Ocorreu um erro interno", error);
     }
     finally {
       setIsLoading(false);
