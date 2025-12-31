@@ -8,17 +8,36 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Loader2Icon, Check, XIcon, EyeIcon, EyeOffIcon } from "lucide-react";
+import { supabase } from "@/services/supabaseClient";
 
-const ChangePass = () => {
+interface ChangePassProps {
+  setIsPasswordRecovery: (value: boolean) => void;
+}
+
+const ChangePass = ({ setIsPasswordRecovery }: ChangePassProps) => {
   const auth = authContext;
   const navigate = useNavigate();
   const [newPass, setNewPass] = useState("");
   const [eyeIcon, setEyeIcon] = useState(false);
   const [passType, setPassType] = useState("password");
   const [isLoading, setIsLoading] = useState(false);
+
+  // Verificar se há um contexto de reset válido ao montar o componente
+  useEffect(() => {
+    const checkRecoveryContext = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      // Se não há sessão, não é um contexto válido de reset
+      if (!session) {
+        navigate('/');
+        return;
+      }
+    };
+
+    checkRecoveryContext();
+  }, [navigate]);
 
   function showPass() {
     setEyeIcon(!eyeIcon);
@@ -42,8 +61,12 @@ const ChangePass = () => {
 
       if (error) {
         console.log(error)
+        setIsLoading(false);
+        return;
       }
 
+      // Limpar o flag de password recovery após atualização bem-sucedida
+      setIsPasswordRecovery(false);
       navigate('/test')
     } catch (error) {
       console.log("Ocorreu um erro interno");
