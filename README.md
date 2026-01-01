@@ -2,12 +2,6 @@
 
 Aplicação de autenticação construída como primeiro projeto completo do repositório. Usa Supabase para autenticação, React Router para navegação e um conjunto de componentes estilizados com Tailwind + Chakra UI/next-themes.
 
-> Substitua os placeholders de imagens pelas capturas reais quando quiser:
-> ![Tela de login](docs/screens/login.png)
-> ![Cadastro](docs/screens/signup.png)
-> ![Recuperar senha](docs/screens/forgot.png)
-> ![Atualizar senha](docs/screens/change-pass.png)
-
 ## Principais funcionalidades
 - Fluxo de login em 2 passos: primeiro valida o e-mail, depois mostra o campo de senha com toggle de visibilidade e alerta de credenciais inválidas.
 - Cadastro em 2 passos: coleta nome/sobrenome + e-mail e só depois solicita a senha; exibe erro quando o e-mail já existe.
@@ -75,6 +69,16 @@ Use `npm run dev:host` se precisar expor na rede local.
 - `ChangePass`: checagens de força simples e atualização da senha.
 - `Test`: rota protegida mínima para testar sessão/sign out.
 - `Loading`: tela de carregamento usada no suspense e enquanto a sessão é buscada.
+
+## Screenshots
+
+| Login | Cadastro |
+| --- | --- |
+| ![Tela de login](docs/screens/login.png) | ![Cadastro](docs/screens/signup.png) |
+
+| Recuperar senha | Atualizar senha |
+| --- | --- |
+| ![Recuperar senha](docs/screens/forgot.png) | ![Atualizar senha](docs/screens/change-pass.png) |
 
 ## Scripts npm
 - `npm run dev` — servidor de desenvolvimento.
